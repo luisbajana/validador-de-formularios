@@ -10,15 +10,29 @@
 
 <div class="container">
   <form action="" id="myform">
+
+    <div class="row m-t-20">
+        <div class="form-group col-sm-6">
+            <label for="num_card">Campo requerido</label>
+            <input type="text" class="form-control" data-validation="required" data-validation-error-msg="Este campo es requerido" />
+            <span class="help-block hide"></span>
+        </div>
+        <div class="form-group col-sm-6">
+            <label for="num_card">Correo electrónico</label>
+            <input type="text" class="form-control" data-validation="email" data-validation-error-msg="El formato de email no es correcto" />
+            <span class="help-block hide"></span>
+        </div>
+    </div>
+
     <div class="row m-t-20">
         <div class="form-group col-sm-6">
             <label for="num_card">Número Telcel</label>
-            <input type="text" class="form-control js-only-numbers" id="numero_telcel" data-validation="minlength" data-validation-min-length="10" data-validation-error-msg="Ingresa un número Telcel válido" name="num_card" maxlength="10" />
+            <input type="text" class="form-control js-only-numbers" id="numero_telcel" data-validation="minlength" data-validation-min-length="10" data-validation-error-msg="Ingresa un número telefonico válido" name="num_card" maxlength="10" />
             <span class="help-block hide"></span>
         </div>
         <div class="form-group col-sm-6">
             <label for="num_card">Repite tu número Telcel</label>
-            <input type="text" class="form-control js-only-numbers" id="numero_telcel_confirmacion" data-validation="confirmation" data-validation-confirm="numero_telcel" data-validation-error-msg="El número Telcel no coincide" name="num_card" maxlength="10" />
+            <input type="text" class="form-control js-only-numbers" id="numero_telcel_confirmacion" data-validation="confirmation" data-validation-confirm="numero_telcel" data-validation-error-msg="El número no coincide" name="num_card" maxlength="10" />
             <span class="help-block hide"></span>
         </div>
     </div>
