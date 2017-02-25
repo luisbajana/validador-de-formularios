@@ -1,61 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Validador de formularios</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Validador de formularios</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
+
 <body>
 
 
-<div class="container">
-  <form action="" id="myform">
+    <section class="container">
+        <form action="" id="myform">
 
-    <div class="row m-t-20">
-        <div class="form-group col-sm-6">
-            <label for="num_card">Campo requerido</label>
-            <input type="text" class="form-control" data-validation="required" data-validation-error-msg="Este campo es requerido" />
-            <span class="help-block hide"></span>
-        </div>
-        <div class="form-group col-sm-6">
-            <label for="num_card">Correo electrónico</label>
-            <input type="text" class="form-control" data-validation="email" data-validation-error-msg="El formato de email no es correcto" />
-            <span class="help-block hide"></span>
-        </div>
-    </div>
+            <div class="row m-t-20">
+                <div class="form-group col-sm-6">
+                    <label for="num_card">Campo requerido</label>
+                    <input type="text" class="form-control" data-validation="required" data-validation-error-msg="Este campo es requerido" />
+                    <span class="help-block hide"></span>
+                </div>
+                <div class="form-group col-sm-6">
+                    <label for="num_card">Correo electrónico</label>
+                    <input type="text" class="form-control" data-validation="email" data-validation-error-msg="El formato de email no es correcto" />
+                    <span class="help-block hide"></span>
+                </div>
+            </div>
 
-    <div class="row m-t-20">
-        <div class="form-group col-sm-6">
-            <label for="num_card">Número Telcel</label>
-            <input type="text" class="form-control js-only-numbers" id="numero_telcel" data-validation="minlength" data-validation-min-length="10" data-validation-error-msg="Ingresa un número telefonico válido" name="num_card" maxlength="10" />
-            <span class="help-block hide"></span>
-        </div>
-        <div class="form-group col-sm-6">
-            <label for="num_card">Repite tu número Telcel</label>
-            <input type="text" class="form-control js-only-numbers" id="numero_telcel_confirmacion" data-validation="confirmation" data-validation-confirm="numero_telcel" data-validation-error-msg="El número no coincide" name="num_card" maxlength="10" />
-            <span class="help-block hide"></span>
-        </div>
-    </div>
+            <div class="row m-t-20">
+                <div class="form-group col-sm-6">
+                    <label for="num_card">Número telefónico</label>
+                    <input type="text" class="form-control" id="numero_telcel" data-validation="minlength" data-validation-min-length="10" data-validation-error-msg="Ingresa un número telefonico válido" name="num_card" maxlength="10" />
+                    <span class="help-block hide"></span>
+                </div>
+                <div class="form-group col-sm-6">
+                    <label for="num_card">Repite tu número</label>
+                    <input type="text" class="form-control" id="numero_telcel_confirmacion" data-validation="confirmation" data-validation-confirm="numero_telcel" data-validation-error-msg="El número no coincide" name="num_card" maxlength="10" />
+                    <span class="help-block hide"></span>
+                </div>
+            </div>
 
-    <button type="submit" class="btn btn-lg btn-primary validar-formulario">Siguiente</button>
+            <div class="row m-t-20">
+                <div class="form-group col-sm-6">
+                    <label for="num_card">Mostrar contraseña</label>
+                    <input type="password" class="form-control show-password" />
+                    <span class="help-block hide"></span>
+                </div>
+            </div>
 
-  </form>
+            <button type="submit" class="btn btn-lg btn-primary validar-formulario">Siguiente</button>
 
-  <footer>
-    Created by <a href="http://www.luisbajana.com">Luis Bajana</a>
-  </footer>
-</div>
+        </form>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="jquery-validador-formularios.js"></script>
+    </section>
 
-<script>
-  $(document).on('click','.validar-formulario',function(e){
-    e.preventDefault();
-    ValidadorTelcel.inicializar( $(this).closest('form').attr('id') );
-  });
-</script>
+
+    <footer class="container">
+        <p class="pull-right"><a href="http://www.luisbajana.com">Luis Bajana</a></p>
+    </footer>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="jquery-validador-formularios.js"></script>
+
+    <script>
+        $(document).on('click', '.validar-formulario', function(e) {
+            e.preventDefault();
+            ValidadorTelcel.inicializar($(this).closest('form').attr('id'));
+        });
+        ValidadorTelcel.show_password();
+    </script>
 
 
 </body>
+
 </html>
