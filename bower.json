@@ -1,0 +1,23 @@
+{
+  "name": "validador-de-formularios",
+  "homepage": "https://github.com/luisbajana/validador-de-formularios",
+  "authors": [
+    "Luis Bajana"
+  ],
+  "description": "Validador de formularios en espanol",
+  "main": "index.html",
+  "keywords": [
+    "validador",
+    "form",
+    "validator",
+    "javascript"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

@@ -167,8 +167,16 @@ var ValidadorTelcel = {
     inputs = document.getElementById(id);
     for (index = 0; index < inputs.length; ++index) {
         var input = inputs[index];
-        if( input.hasAttribute('data-validation') ) ValidadorTelcel.clasificador( input );
+        if( input.hasAttribute('data-validation') ){
+          ValidadorTelcel.clasificador( input );
+          assignarListeners(input);
+        }
     }
+
+    function assignarListeners( i ){
+      i.addEventListener("keyup", function(){ ValidadorTelcel.clasificador( i ); }, false);
+    }
+
   },
 
   inicializar: function(id){
