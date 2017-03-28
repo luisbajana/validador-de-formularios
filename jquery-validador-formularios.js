@@ -141,10 +141,20 @@ var ValidadorTelcel = {
   },
 
 
+  ir_al_primero: function(){
+
+    console.log("Aqui deberia ir al primero");
+    $("html, body").animate({
+       scrollTop: $('.help-block').first().offset().top - 65
+   }, 2000);
+
+  },
+
   //disparador del formulario, solo verifica si no hay errores y sube el formulario
   disparador: function( formulario ){
     var f = $('#'+formulario);
     if( f.find('.help-block').length === 0 ) f.submit();
+    else ValidadorTelcel.ir_al_primero();
   },
 
 
